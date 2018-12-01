@@ -1,48 +1,88 @@
-<!DOCTyPE html> 
-//Intro with Arnell into html, css, DOM//
-//Document Object Model is a tree representation of a webste//
-//#ID vs. .ClassName//
-//html css in W3Schools//
-//# = id, . = className//
-//style guide per company//
-//tags in Elements//
-//document.getElementById("hotelName");//
+<!DOCTyPE html>
 
 <html>
-    <head>
-        <title>This is the text that appears in the tab of you browser. Presto!</title>
-        
-        <style>
+
+<head>
+    <title>This is the text that appears in the tab of you browser. Presto!</title>
+
+    <style>
         h1 {
             color: blue;
         }
-       #slogan {
+
+        #slogan {
             color: green;
         }
+
         .rooms {
             color: teal;
         }
-        </style>
-        
-        
-    </head>
+    </style>
+
+</head>
+
+<body>
+    <h1 id="hotelName">CareerDevs Hotel</h1>
+    <h3 id="slogan">Where You Pay With Code!</h3>
+    <p>Code you're night away, in our technology inspired rooms.</p>
+
+    <!--<p id="rmAvailable">Room list should appear here</p>-->
     
-        <body>
-            <h1 id="hotelName">CareerDevs Hotel</h1>
-            <h3 id="slogan">Where You Pay With Code!</h3>
-            <p>Code you're night away, in our technology inspired rooms.</p>
-            
-            <h3 class="rooms">Rooms Available</h3>
-            <p id="rmAvailable">Room list should appear here</p>
-            
-            <h3 class="rooms">Rooms Booked</h3>
-            <p id="rmBooked"></p>
-            
-            
-            
-            
-            
-        </body>
+    <h3 class="rooms">Rooms Available</h3>
     
+    <div id="rmsAvailable">
+
+    </div>
+
+    <!--!--SO select method    -->
+
+    <h3 class="rooms">Please Select A Room</h3>
+
+    <div id="selectARoom">
+
+    </div>
+
+    <br>
+    <!--add a button-->
     
+    <p id="demo"></p>
+
+    <!--EO select method      -->
+
+    <h3 class="rooms">Rooms Booked</h3>
+    
+    <p id="rmBooked"></p>
+
+
+</body>
+
+<script src="hotelRooms.js"></script>
+
+
 </html>
+
+<!--//Intro with Arnell into html, css, DOM//-->
+<!--//Document Object Model is a tree representation of a webste//-->
+<!--//#ID vs. .ClassName//-->
+<!--//html css in W3Schools//-->
+<!--//# = id, . = className//-->
+<!--//style guide per company//-->
+<!--//tags in Elements//-->
+<!--//document.getElementById("hotelName");//-->
+<!--<div>divider</div>-->
+<!--<ul>creates a list</ul> -->
+<!--<ol>creates a list</ol> -->
+
+<!--<li>item1</li>-->
+<!--<li>item2</li>-->
+<!--<li>item3</li>-->
+<!--<li>item4</li>-->
+<!--<li>item5</li>-->
+<!--document-console.log for DOM-->
+
+<!--<ul>   -->
+<!--                <div id="rmsAvailable">-->
+
+<!--                </div>-->
+
+<!--            </ul>-->
