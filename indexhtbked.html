@@ -3,21 +3,18 @@
 <html>
 
 <head>
-    <title>This is the text that appears in the tab of you browser. Presto!</title>
+    <title id="title">This is the text that appears in the tab of you browser. Presto!</title>
 
     <style>
         h1 {
             color: blue;
-        }
-        h2 {
-            color: purple;
         }
 
         #slogan {
             color: green;
         }
 
-        .seats {
+        .rooms {
             color: teal;
         }
     </style>
@@ -25,53 +22,55 @@
 </head>
 
 <body>
-    <h1 id="venueName">CareerDevs Venues</h1>
-    <h2>"Our Best for Paris"</h2>
-    <img src="https://cdn.ontourmedia.io/u2/non_secure/images/20151123/belfast1_use1448273529/large.jpg" alt="Our Best for Paris" style="width:1200px;height:400px;">
+    <h1 id="hotelName">CareerDevs Hotel</h1>
     <h3 id="slogan">Where You Pay With Code!</h3>
-    <p>Rock you're night away, in our "To the Moon" inspired seats.</p>
+    <p>Code you're night away, in our technology inspired rooms.</p>
 
     <!--<p id="rmAvailable">Room list should appear here</p>-->
     
-    <h3 class="seats">Seats Available</h3>
+    <!--//SO UL list section=======UL BEGINS-->
     
-    <div id="seatsAvailable">
+    <!--<h3 class="rooms">Rooms Available</h3>-->
+    
+    <!--<div id="rmsAvailable">-->
 
-    </div>
+    <!--</div>-->
 
     <!--!--SO select method    -->
+    
+     <!--//EO UL list=====UL ENDS-->
+     
+    <!--selcet method for drop down-->
+    
+    <div id="dropDown">
+        <h3 class="rooms">Please Select A Room</h3>
 
-    <h3 class="seats">Please Select A Seat</h3>
+        <div id="selectARoom">
 
-    <div id="selectASeat">
-
+        </div>
+    
     </div>
 
     <br>
-    <!--add a button-->
     
-    <p id="demo"></p>
+     <!--SO add a button-->
+    
+    <button type="button" onclick="hotel.bookRoom()">Book Selected Room</button>
+    
+    <!--EO add a button-->
+    
+    <!--<p id="demo"></p>-->
 
-    <!--EO select method-->
-    
-    <!--SO select method    -->
+    <!--EO select method      -->
 
-    <h3 class="seats">Seats Booked</h3>
+    <h3 class="rooms">Rooms Booked</h3>
     
-    <div id="selctedSeat">
-    
-    </div>
-    
-    <br>
-    
-    <button>Click me</button>
-     <!--add a button-->
-    
-    <!--EO select method-->
+    <p id="rmBooked"></p>
+
 
 </body>
 
-<script src="venue.js"></script>
+<script src="hotelRoomsBooked.js"></script>
 
 
 </html>

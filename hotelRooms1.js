@@ -70,6 +70,8 @@ selectRoomList += "</selcet> </form>";
 document.getElementById("selectARoom").innerHTML = selectRoomList;
 
 
+
+
 //EO select a room method, change from <ul> to dropp down
 
 // <ul>
