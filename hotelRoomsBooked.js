@@ -21,6 +21,7 @@ var hotel = { //var=name, method is a function inside of an object
 
     },
     // roomNumbersBooked: [], //roomNumbersAvailable: ["101" ,"102" , "103" , "104" , "105" , "106"],
+    
     bookRoom: function() { // only book a room if one or more is available
         if (this.numberOfRoomsAvailable() > 0) { //select a random available room + return randomAvailRoom
             // var randomRoom = this.roomNumbersAvailable[Math.floor(Math.random()*this.roomNumbersAvailable.length)];
@@ -30,25 +31,41 @@ var hotel = { //var=name, method is a function inside of an object
             //list.splice( list.indexOf("foo"), 1); returns the position of the item in the array
             //remove the booked room from roomNumbersAvailable and add it to roomNumbersBooked
             // this.roomNumbersBooked.unshift(this.roomNumbersAvailable.splice(this.roomNumbersAvailable.indexOf(selectedRoomDD), 1)[0]); 
+
+            //update the available rooms drop down
+
+            var selectRoomList = "<form> <select id='selctARoom'>";
+            for (var i = 0; i < this.roomNumbersAvailable.length; i++) {
+                //need to escape \ certain ' quotes on following lines (ie:"<option value=\'" 
+                //Research"escaping characters+ qoutes" and concatnate using "+"
+                selectRoomList += "<option value=\'" + this.roomNumbersAvailable[i] + "\'>" + this.roomNumbersAvailable[i] + "</option>";
+            }
+
+            selectRoomList += "</selcet> </form>";
+            document.getElementById("selectARoom").innerHTML = selectRoomList;
+
+
+            var roomsBooked = "<form> <select id='roomsBooked'>";
+            for (var i = 0; i < this.hotel.roomNumbersBooked.length; i++) {
+                //need to escape \ certain ' quotes on following lines (ie:"<option value=\'" 
+                //Research"escaping characters+ qoutes" and concatnate using "+"
+                roomsBooked += "<option value=\'" + this.hotel.roomNumbersBooked[i] + "\'>" + this.hotel.roomNumbersBooked[i] + "</option>";
+            }
+
+            roomsBooked += "</selcet> </form>";
+            document.getElementById("roomsBooked").innerHTML = roomsBooked;
+
+            // selectRoomList += "</selcet> </form>";
+            // document.getElementById("selectARoom").innerHTML = selectRoomList;    
+
+
         }
     },
+
     //SO update the drop down list
-    // unbookRoom: function() {
-    //     if (this.numberOfRoomsAvailable() > 0) {
-    //         var selectRoomList = "<form> <select id='selctedRoom'>";
-            
-    //     }
-        
-    // }    
-    // var selectRoomList = "<form> <select id='selctedRoom'>";
-    // for (var i = 0; i < this.hotel.roomNumbersAvailable.length; i++) {
-    //     //need to escape \ certain ' quotes on following lines (ie:"<option value=\'" 
-    //     //Research"escaping characters+ qoutes" and concatnate using "+"
-    //     selectRoomList += "<option value=" + this.hotel.roomNumbersAvailable[i] + ">" + this.hotel.roomNumbersAvailable[i] + "</option>";
-    // }
-    // selectRoomList += "</selcet> </form>";
-    // document.getElementById("selectARoom").innerHTML = selectRoomList;
-    
+
+
+
     //EO update the drop down list
 
     checkoutRoom: function() { // only book a room if one or more is available
@@ -62,36 +79,19 @@ var hotel = { //var=name, method is a function inside of an object
 
 };
 
-document.getElementById("hotelName").innerText = hotel.name;
+document.getElementById("hotelName").innerHTML = hotel.name;
 
-//<div id="rmsAvailable"></div>
-//SO UL list section=======UL BEGINS
-//roomNumbersAvailable: ["101" ,"102" , "103" , "104" , "105" , "106"],
-
-// var roomList = "</ul>";
-// for (var i = 0; i < hotel.roomNumbersAvailable.length; i++ ) {
-
-//         roomList += "<li>"+ hotel.roomNumbersAvailable[i]+"</li>";
-// }  
-
-// roomList += "</ul>";
-
-// document.getElementById("rmsAvailable").innerHTML = roomList;
-
-//EO UL list=====UL ENDS
-
-//roomNumbersAvailable: ["101" ,"102" , "103" , "104" , "105" , "106"],
-
-//SO select a room method, change from <ul> to dropp down
+//EO bookRoom()
 
 //SO create intial drop down
+
 var selectRoomList = "<form> <select id='selctedRoom'>";
 for (var i = 0; i < hotel.roomNumbersAvailable.length; i++) {
     //need to escape \ certain ' quotes on following lines (ie:"<option value=\'" 
     //Research"escaping characters+ qoutes" and concatnate using "+"
     selectRoomList += "<option value=\'" + hotel.roomNumbersAvailable[i] + "\'>" + hotel.roomNumbersAvailable[i] + "</option>";
 }
-selectRoomList += "</selcet> </form>";
+selectRoomList += "</selecet> </form>";
 document.getElementById("selectARoom").innerHTML = selectRoomList;
 
 //EO create intial drop down
@@ -100,26 +100,16 @@ document.getElementById("selectARoom").innerHTML = selectRoomList;
 
 //SO dropDown for bookRoom method, change from <ul> to dropp down
 
-var selectRoomList = "<form> <select id='selctedRoom'>";
-for (var i = 0; i < hotel.roomNumbersAvailable.length; i++) {
-    //need to escape \ certain ' quotes on following lines (ie:"<option value=\'" 
-    //Research"escaping characters+ qoutes" and concatnate using "+"
-    selectRoomList += "<option value=\'" + hotel.roomNumbersAvailable[i] + "\'>" + hotel.roomNumbersAvailable[i] + "</option>";
-}
+// var roomsBooked = "<form> <select id='roomsBooked'>";
+// for (var i = 0; i < hotel.roomNumbersBooked.length; i++) {
+//     //need to escape \ certain ' quotes on following lines (ie:"<option value=\'" 
+//     //Research"escaping characters+ qoutes" and concatnate using "+"
+//     roomsBooked += "<option value=\'" + hotel.roomNumbersBooked[i] + "\'>" + hotel.roomNumbersBooked[i] + "</option>";
+// }
 
-selectRoomList += "</selcet> </form>";
-document.getElementById("selectARoom").innerHTML = selectRoomList;
+// roomsBooked += "</selcet> </form>";
+// document.getElementById("roomsBooked").innerHTML = roomsBooked;
 
 //EO dropDown for bookRoom methodmethod, change from <ul> to dropp down
 
-// <ul>
-// <li>101</li>
-// <li>102</li>
-// <li>103</li>
-// <li>104</li>
-// <li>105</li>
-// <li>106</li>
-//</ul>
-
-
-//document.getElementById("rmsAvailable").innerText = hotel.roomNumbersAvailable[i];//
+//<div>roomsBooked</div>
